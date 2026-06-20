@@ -162,7 +162,7 @@ Everything in Build It, plus real help so you never get stuck alone.
 **Section heading:** Questions you're already asking
 
 **Is this just ChatGPT tips?**
-No. Prompting is module one. The whole point is the climb: from a browser chat all the way to Claude Code building and shipping real things with you.
+No. Prompting is an early module. The whole point is the climb: from a browser chat all the way to Claude Code building and shipping real things with you.
 
 **Do I need to be technical to use Claude Code?**
 No. That's the entire reason this exists. We start at your first chat message and build up to it step by step. If you can use a web browser, you can start.
