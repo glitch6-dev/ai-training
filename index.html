@@ -15,14 +15,13 @@
   <meta property="og:title" content="TG6-Dev · AI Training — Learn to drive AI, from chat to Claude Code" />
   <meta property="og:description" content="You don't need to learn to code. You need to learn to drive AI. From your first browser chat to shipping one real thing with Claude Code." />
   <meta property="og:url" content="https://REPLACE_WITH_DOMAIN/" />
-  <!-- ASSET SPOT: drop a 1200×630 share image at assets/og-cover.png -->
-  <meta property="og:image" content="https://REPLACE_WITH_DOMAIN/assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://REPLACE_WITH_DOMAIN/assets/IMG_4449.png" />
+  <meta property="og:image:width" content="1376" />
+  <meta property="og:image:height" content="768" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TG6-Dev · AI Training — Learn to drive AI, from chat to Claude Code" />
   <meta name="twitter:description" content="From your first browser chat to shipping one real thing with Claude Code. Three programs, self-paced to 1-on-1." />
-  <meta name="twitter:image" content="https://REPLACE_WITH_DOMAIN/assets/og-cover.png" />
+  <meta name="twitter:image" content="https://REPLACE_WITH_DOMAIN/assets/IMG_4449.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" />
@@ -66,10 +65,27 @@
       <a class="logo" href="#top" aria-label="TG6-Dev AI Training home">
         <img src="assets/logo.png" width="73" height="40" alt="TG6-Dev · AI Training" />
       </a>
-      <span class="status-dot">● READY</span>
+      <div class="nav-links">
+        <a href="#programs">Programs</a>
+        <a href="#proof">Proof</a>
+        <a href="#faq">FAQ</a>
+        <a href="apply.html">Apply</a>
+      </div>
+      <span class="status-dot">READY</span>
       <a class="btn btn-accent nav-cta" href="#pricing">Start now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#programs">Programs</a>
+    <a href="#proof">Proof</a>
+    <a href="#faq">FAQ</a>
+    <a href="apply.html">Apply</a>
+    <a href="course/index.html">Course</a>
+    <a class="btn btn-accent" href="#pricing">Start now</a>
+  </div>
 
   <header class="hero-split" id="top">
     <div class="wrap">
@@ -96,17 +112,6 @@
     </div>
   </header>
 
-  <section class="section alt">
-    <div class="wrap">
-      <span class="kicker">// THE AI GAP</span>
-      <h2 class="reveal">Why most people stall</h2>
-      <p class="reveal">You have AI. So does everyone.</p>
-      <p class="reveal">You got mush and decided it was hype.</p>
-      <p class="reveal">It wasn't. Nobody showed you how to drive it.</p>
-      <p class="reveal">The people who pull ahead won't code — they'll make AI do the work.</p>
-    </div>
-  </section>
-
   <section class="section">
     <div class="wrap">
       <span class="kicker">// WHAT YOU WALK AWAY WITH</span>
@@ -132,15 +137,19 @@
     </div>
   </section>
 
-  <section class="section lineup" id="finder">
+  <section class="section paths" id="programs">
     <div class="wrap">
-      <span class="kicker">// SIGNAL CHECK · WHERE ARE YOU NOW?</span>
-      <div class="finder-tiles" role="group" aria-label="Where are you now?">
-        <button type="button" class="finder-tile" data-level="never">NEVER USED AI</button>
-        <button type="button" class="finder-tile" data-level="chat">I USE CHAT</button>
-        <button type="button" class="finder-tile" data-level="ship">READY TO SHIP</button>
+      <span class="kicker">// THREE WAYS UP THE SAME CLIMB</span>
+      <h2 class="reveal">From self-guided to shipped together.</h2>
+      <p class="sub reveal">Same destination — one real thing shipped. Pick how much of the climb you do alone.</p>
+      <figure class="paths-figure reveal">
+        <img src="assets/IMG_4451.jpeg" width="1407" height="535" alt="TG6-Dev AI Training — three learning paths: self-guided, collaborative group, and expert one-on-one" loading="lazy" />
+      </figure>
+      <div class="paths-legend reveal">
+        <div>Module 01<b>Self-Guided</b></div>
+        <div>Module 02<b>Collaborative</b></div>
+        <div>Module 03<b>Expert 1-on-1</b></div>
       </div>
-      <p class="finder-line mono" aria-live="polite"></p>
     </div>
   </section>
 
@@ -217,19 +226,9 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section alt" id="faq">
     <div class="wrap">
-      <h2 class="reveal">Founding students</h2>
-      <div class="founding reveal">
-        <p>I'm taking my first small group of founding students at a lower price, with more of my time. In exchange, you let me document what you build and say so on the record if you're happy.</p>
-        <p>That's the trade. More help, lower price — you get a real result, I get case studies.</p>
-        <p>Founding seats are limited, and the price goes up once they're gone.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="wrap">
+      <span class="kicker">// STRAIGHT ANSWERS</span>
       <h2 class="reveal">Questions you're already asking</h2>
       <details class="qa reveal">
         <summary>Is this just ChatGPT tips?</summary>
@@ -310,6 +309,21 @@
     const yr = document.getElementById("yr");
     if (yr) yr.textContent = new Date().getFullYear();
 
+    // ── Mobile menu ────────────────────────────────────────────────────
+    const navToggle = document.getElementById("navToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (navToggle && mobileMenu) {
+      const setMenu = (open) => {
+        mobileMenu.classList.toggle("open", open);
+        navToggle.setAttribute("aria-expanded", String(open));
+        mobileMenu.setAttribute("aria-hidden", String(!open));
+        document.body.style.overflow = open ? "hidden" : "";
+      };
+      navToggle.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+      mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+      window.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+    }
+
     // ── Nav blur on scroll ─────────────────────────────────────────────
     const navEl = document.querySelector(".nav");
     if (navEl) {
@@ -329,29 +343,6 @@
         });
       }, { threshold: 0.12 });
       items.forEach((el) => io.observe(el));
-    }
-
-    // ── Signal Check finder ────────────────────────────────────────────
-    const REC = {
-      never: { tier: "1", line: "→ START AT BUILD IT — the full self-paced ladder, chat to Claude Code." },
-      chat:  { tier: "2", line: "→ SHIP IT FITS — chat habits + real help so you never stall alone." },
-      ship:  { tier: "3", line: "→ GET LAUNCHED — 1-on-1, we ship your real thing together." }
-    };
-    const tilesWrap = document.querySelector(".finder-tiles");
-    const lineEl = document.querySelector(".finder-line");
-    const tiersWrap = document.querySelector(".tiers");
-    if (tilesWrap && tiersWrap) {
-      tilesWrap.addEventListener("click", (e) => {
-        const btn = e.target.closest(".finder-tile");
-        if (!btn) return;
-        const rec = REC[btn.getAttribute("data-level")];
-        if (!rec) return;
-        tilesWrap.querySelectorAll(".finder-tile").forEach((t) => t.classList.toggle("is-active", t === btn));
-        lineEl.innerHTML = rec.line + '<span class="caret">_</span>';
-        tiersWrap.classList.add("has-pick");
-        tiersWrap.querySelectorAll(".tier").forEach((c) =>
-          c.classList.toggle("is-rec", c.getAttribute("data-tier") === rec.tier));
-      });
     }
   </script>
 </body>
