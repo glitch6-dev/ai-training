@@ -367,8 +367,13 @@ details.qa .qa-body strong{color:var(--text)}
 .svc ul{list-style:none;padding:0;margin:0 0 22px;flex:1}
 .svc ul li{padding:7px 0 7px 26px;position:relative;color:var(--ink)}
 .svc ul li::before{content:"\2713";position:absolute;left:0;color:var(--ok)}
-.svc .cta{margin-top:auto}
+.svc .price{font-family:var(--mono);font-size:1.5rem;font-weight:700;margin:0 0 14px;color:var(--text)}
+.svc .price .per{font-size:.82rem;color:var(--muted);font-weight:500}
+.svc .cta{margin-top:auto;display:flex;flex-direction:column;gap:10px}
 .svc .btn{width:100%;text-align:center}
+.svc .pay-alts{margin:12px 0 0;font-size:.84rem;color:var(--muted);line-height:1.7}
+.svc .pay-alts a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--line);white-space:nowrap;transition:color .15s,border-color .15s}
+.svc .pay-alts a:hover{color:var(--accent);border-color:var(--accent)}
 
 /* ============ HOW IT WORKS (3 steps) ============ */
 .steps{display:grid;gap:18px;grid-template-columns:1fr;max-width:960px;margin:36px auto 0;counter-reset:step}
